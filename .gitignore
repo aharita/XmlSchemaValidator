@@ -4,3 +4,14 @@ obj
 
 # mstest test results
 TestResults
+
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+
+# Visual Studio
+[Dd]ebug/
+[Rr]elease/
+*.sln.cache
+*.suo
+*.csproj.user

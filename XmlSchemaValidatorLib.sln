@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSchemaValidatorLib", "XmlSchemaValidatorLib\XmlSchemaValidatorLib.csproj", "{D2678D71-9692-40C6-B128-4B3F86949945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSchemaValidatorLib.Tests", "XmlSchemaValidatorLib.Tests\XmlSchemaValidatorLib.Tests.csproj", "{1504D41B-70B6-4AA6-9B82-1A8A01C6CA00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B1AC0DDC-E555-4D13-A6A4-FE1DC63C3BC1}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		XmlSchemaValidatorLib.vsmdi = XmlSchemaValidatorLib.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = XmlSchemaValidatorLib.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2678D71-9692-40C6-B128-4B3F86949945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2678D71-9692-40C6-B128-4B3F86949945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2678D71-9692-40C6-B128-4B3F86949945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2678D71-9692-40C6-B128-4B3F86949945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1504D41B-70B6-4AA6-9B82-1A8A01C6CA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1504D41B-70B6-4AA6-9B82-1A8A01C6CA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1504D41B-70B6-4AA6-9B82-1A8A01C6CA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1504D41B-70B6-4AA6-9B82-1A8A01C6CA00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
