@@ -87,5 +87,34 @@ namespace XmlSchemaValidatorLib.Tests
 
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        ///A test for Validate
+        ///</summary>
+        [TestMethod()]
+        public void IsValidWithoutSpecifyingXmlnsTest()
+        {
+            var xmlDoc = XDocument.Load("books.xml");
+            var xmlSchema = XDocument.Load("books.xsd");
+
+            var result = XmlSchemaValidator.Instance.IsValid(xmlDoc, xmlSchema);
+
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        ///A test for Validate
+        ///</summary>
+        [TestMethod()]
+        public void ValidateWithoutSpecifyingXmlnsTest()
+        {
+            var xmlDoc = XDocument.Load("books.xml");
+            var xmlSchema = XDocument.Load("books.xsd");
+            const string xmlns = "urn:books";
+
+            XmlSchemaValidator.Instance.Validate(xmlDoc, xmlSchema, xmlns);
+
+            Assert.IsTrue(true);
+        }
     }
 }

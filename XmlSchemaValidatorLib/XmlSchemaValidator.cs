@@ -24,8 +24,29 @@ namespace XmlSchemaValidatorLib
 
         #endregion
 
+        public string GetFirstXmlnsFromSchema(XDocument schema)
+        {
+            string xmlns = null;
+
+            if (schema.Root != null)
+            {
+                var xmlnsAttribute = schema.Root.Attribute("targetNamespace");
+                if (xmlnsAttribute != null && string.IsNullOrEmpty(xmlnsAttribute.Value))
+                {
+                    xmlns = xmlnsAttribute.Value;
+                }
+            }
+
+            return xmlns;
+        }
+
         public void Validate(XDocument doc, XDocument schema, string xmlns = "")
         {
+            if (string.IsNullOrEmpty(xmlns))
+            {
+                xmlns = GetFirstXmlnsFromSchema(schema);
+            }
+
             var schemas = new XmlSchemaSet();
             schemas.Add(xmlns, XmlReader.Create(new StringReader(schema.ToString())));
 
@@ -38,6 +59,12 @@ namespace XmlSchemaValidatorLib
         public bool IsValid(XDocument doc, XDocument schema, string xmlns = "")
         {
             var isValid = true;
+
+            if (string.IsNullOrEmpty(xmlns))
+            {
+                xmlns = GetFirstXmlnsFromSchema(schema);
+            }
+
             var schemas = new XmlSchemaSet();
             schemas.Add(xmlns, XmlReader.Create(new StringReader(schema.ToString())));
 
