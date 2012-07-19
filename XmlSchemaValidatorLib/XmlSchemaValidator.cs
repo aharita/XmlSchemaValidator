@@ -93,9 +93,9 @@ namespace XmlSchemaValidatorLib
             var schemas = new XmlSchemaSet();
             schemas.Add(xmlns, XmlReader.Create(new StringReader(schema.ToString())));
             doc.Validate(schemas, (sender, args) =>
-            {
-                throw new Exception(args.Message, args.Exception);
-            }, true);
+                                      {
+                                          isValid = false;
+                                      }, true);
 
             return isValid;
         }
