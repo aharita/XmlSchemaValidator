@@ -24,20 +24,29 @@ namespace XmlSchemaValidatorLib
 
         #endregion
 
-        public void Validate(XDocument doc, XDocument schema, string xmlns)
+        public void Validate(XDocument doc, XDocument schema, string xmlns = "")
         {
             var schemas = new XmlSchemaSet();
             schemas.Add(xmlns, XmlReader.Create(new StringReader(schema.ToString())));
 
             doc.Validate(schemas, (sender, args) =>
-            {
-                throw new Exception(args.Message, args.Exception);
-            }, true);
+                                      {
+                                          throw new Exception(args.Message, args.Exception);
+                                      }, true);
         }
 
-        public void Validate(XDocument doc, XDocument schema)
+        public bool IsValid(XDocument doc, XDocument schema, string xmlns = "")
         {
-            Validate(doc, schema, "");
+            var isValid = true;
+            var schemas = new XmlSchemaSet();
+            schemas.Add(xmlns, XmlReader.Create(new StringReader(schema.ToString())));
+
+            doc.Validate(schemas, (sender, args) =>
+                                      {
+                                          isValid = false;
+                                      }, true);
+
+            return isValid;
         }
     }
 }

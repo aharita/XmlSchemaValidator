@@ -1,7 +1,5 @@
-﻿using XmlSchemaValidatorLib;
+﻿using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Xml.Linq;
 
 namespace XmlSchemaValidatorLib.Tests
 {
@@ -59,7 +57,7 @@ namespace XmlSchemaValidatorLib.Tests
         //}
         //
         #endregion
-        
+
         /// <summary>
         ///A test for Validate
         ///</summary>
@@ -72,7 +70,22 @@ namespace XmlSchemaValidatorLib.Tests
 
             XmlSchemaValidator.Instance.Validate(xmlDoc, xmlSchema, xmlns);
 
-            Assert.IsTrue(true, "Exception not thrown");
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        ///A test for Validate
+        ///</summary>
+        [TestMethod()]
+        public void IsValidTest()
+        {
+            var xmlDoc = XDocument.Load("books.xml");
+            var xmlSchema = XDocument.Load("books.xsd");
+            const string xmlns = "urn:books";
+
+            var result = XmlSchemaValidator.Instance.IsValid(xmlDoc, xmlSchema, xmlns);
+
+            Assert.IsTrue(result);
         }
     }
 }
