@@ -31,7 +31,7 @@ namespace XmlSchemaValidatorLib
             if (schema.Root != null)
             {
                 var xmlnsAttribute = schema.Root.Attribute("targetNamespace");
-                if (xmlnsAttribute != null && string.IsNullOrEmpty(xmlnsAttribute.Value))
+                if (xmlnsAttribute != null)
                 {
                     xmlns = xmlnsAttribute.Value;
                 }

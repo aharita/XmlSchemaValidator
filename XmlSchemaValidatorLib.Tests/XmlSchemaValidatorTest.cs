@@ -110,9 +110,8 @@ namespace XmlSchemaValidatorLib.Tests
         {
             var xmlDoc = XDocument.Load("books.xml");
             var xmlSchema = XDocument.Load("books.xsd");
-            const string xmlns = "urn:books";
 
-            XmlSchemaValidator.Instance.Validate(xmlDoc, xmlSchema, xmlns);
+            XmlSchemaValidator.Instance.Validate(xmlDoc, xmlSchema);
 
             Assert.IsTrue(true);
         }
